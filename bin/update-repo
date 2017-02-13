@@ -1,0 +1,10 @@
+#!/bin/zsh -e
+
+for element in *
+do
+    if [ -d $element/.git ]
+    then
+        echo "Repository => "$element
+        git -C $element pull --rebase
+    fi
+done
